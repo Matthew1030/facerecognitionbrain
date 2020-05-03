@@ -9,7 +9,7 @@ import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import Particles from 'react-particles-js';
 import './App.css';
 
-//Background Particles
+//Background Particles. Passed as param value into Particles component.
 const particlesOptions = {
   particles: {
     number: {
@@ -22,6 +22,7 @@ const particlesOptions = {
   }
 }
 
+//Initial State Default
 const initialState = {
   input: '',
   imageUrl: '',
@@ -40,10 +41,11 @@ const initialState = {
 class App extends Component {
   constructor() {
     super()
-    //set blank state for input and image URL
+    //set default state
     this.state = initialState;
   }
 
+  //Load user data
   loadUser = (data) => {
     this.setState({
       user: {
